@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        async function bbcNews() {
+            var url = new URL('/bbc',location.origin)
+            var params = {provider:"bbc", url:document.getElementById("provider").value+".amp"}
+            url.search = new URLSearchParams(params).toString();
+            // res = await fetch(url)
+            window.location.href = url
+            // document.getElementById("content").innerHTML = await res.text()
+            // console.log(res)
+        }
+    </script>
+</head>
+<body>
+    bbc:<input type="text" id="provider"> <input type="button" value="추출" onclick="bbcNews()">
+    <div id="content">
+
+    </div>
+</body>
+</html>
