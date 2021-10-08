@@ -1,3 +1,5 @@
+import os
+
 import requests
 from bs4 import BeautifulSoup, NavigableString
 from fastapi import FastAPI
@@ -34,4 +36,4 @@ async def bbc_news(provider, url):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app")
+    uvicorn.run("main:app", port=os.getenv("PORT",8000))
