@@ -36,4 +36,4 @@ async def bbc_news(provider, url):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", port=os.getenv("PORT",8000))
+    uvicorn.run("main:app", port=int(os.getenv("PORT", 8000)))
