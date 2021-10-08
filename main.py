@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup, NavigableString
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse, HTMLResponse, FileResponse
+from fastapi.responses import HTMLResponse, FileResponse
 
 import uvicorn
 
@@ -27,7 +27,6 @@ async def bbc_news(provider, url):
             for content in element.descendants:
                 if isinstance(content, NavigableString):
                     result.append(content)
-            print('-----')
         else:
             result.append(element)
 
